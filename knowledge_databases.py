@@ -8,13 +8,15 @@ Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-def add_article(name, topic, rating):
-	article_object = Student(
+def add_article(name, topic, link, rating):
+	article_object = Knowledge(
 		name=name,
-		year=year,
-		finished_lab=finished_lab)
-	session.add(student_object)
+		topic=topic,
+		link=link,
+		rating=rating,)
+	session.add(article_object)
 	session.commit()
+add_article("Donald J. Trump's Twitter", "Loosing Brain Cells", "https://twitter.com/realDonaldTrump?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor", 1)
 
 
 	

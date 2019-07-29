@@ -12,6 +12,12 @@ class Knowledge(Base):
 	topic = Column(String)
 	rating = Column(Integer)
 
+	def __repr__(self):
+		return("Article Name: {}\n"
+				"Artcile Topic: {}\n"
+				"Article Link: {}\n"
+				"Article Rating:{}\n").format(self.name, self.topic, self.link, self.rating)
+
 	# Create a table with 4 columns
 	# The first column will be the primary key
 	# The second column should be a string representing
@@ -19,10 +25,12 @@ class Knowledge(Base):
 	# The third column will be a string representing the 
 	# topic of the article. The last column will be
 	# an integer, representing your rating of the arknowledge
-a = Knowledge(name = "Cheese", link = "ajsahshsa")
-print(a.link)
-print(a.name)
 
-b = Knowledge(name = "flower", link = "hjhhk" )
-print(b.name)
-print(b.link)
+
+a = Knowledge(name = "15 Best Restraunts in Ohio", link = "https://www.thrillist.com/eat/cleveland/the-15-best-restaurants-in-ohio",topic = "Dining", rating = 7)
+b = Knowledge(name = "5 Best things to do in Fayettville, WV", link = "https://www.tripadvisor.com/Attractions-g59058-Activities-Fayetteville_West_Virginia.html", topic = "Travel", rating = 4)
+c = Knowledge(name = "Timeline of James Charles and Tati's Drama Explained", link = "https://www.elle.com/beauty/makeup-skin-care/a27453234/james-charles-tati-westbrook-youtube-drama-timeline", topic = "Drama", rating = 1)
+
+print(repr(Knowledge.__tablename__))
+print(a)
+
